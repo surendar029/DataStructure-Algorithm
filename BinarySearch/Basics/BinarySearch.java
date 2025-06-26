@@ -1,4 +1,4 @@
-package BinarySearch;
+package BinarySearch.Basics;
 
 public class BinarySearch {
 
@@ -21,6 +21,6 @@ public class BinarySearch {
     public static void main(String[] args) {
         int[] nums = {1, 0, 3, 5, 9, 12};
         int target = 1;
-        System.out.println(binarySearch(nums, target));
+        System.out.println(5/2);
     }
 }

@@ -18,6 +18,10 @@ public class K_Element {
     public static void main(String[] args) {
         int[] arr = {7, 10, 4, 3, 20, 15};
         int k = 2;
-        System.out.println(K_Ele(arr, k));
+        int sum=0;
+        for(int a:arr){
+            sum^=a;
+        }
+        System.out.println(sum);
     }
 }

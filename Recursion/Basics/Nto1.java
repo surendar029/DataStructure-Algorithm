@@ -1,16 +1,21 @@
 package Recursion.Basics;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Nto1 {
 
-    public static void fun(int n) {
+    public static List<Integer> fun(int n) {
         if (n == 0) {
-            return;
+            return new ArrayList<>();  // base case → empty list
         }
-        fun(n - 1);
-        System.out.println(n);
+        List<Integer> result = fun(n - 1);  // recursive call
+        result.add(n);                     // add current number
+        return result;
     }
 
+
     public static void main(String[] args) {
-        fun(5);
+        System.out.println(fun(5));
     }
 }

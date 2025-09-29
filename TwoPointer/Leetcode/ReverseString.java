@@ -1,25 +1,23 @@
 package TwoPointer.Leetcode;
 
 
+import java.util.Arrays;
+
 public class ReverseString {
 
-    public static String reverseString(String s, int k) {
-        char[] arr = s.toCharArray();
-        for (int i = 0; i < arr.length; i += 2 * k) {
-            int start = i;
-            int end = Math.min(i + k - 1, arr.length - 1);
-            while (start < end) {
-                char temp = arr[start];
-                arr[start++] = arr[end];
-                arr[end--] = temp;
-            }
+    static void reverseString(char[] s) {
+        int left = 0;
+        int right = s.length - 1;
+        while (left < right) {
+            char temp = s[left];
+            s[left++] = s[right];
+            s[right--] = temp;
         }
-        return new String(arr);
     }
 
     public static void main(String[] args) {
-        String s = "a";
-        int k = 2;
-        System.out.println(reverseString(s, k));
+        char[] charArray = {'h', 'e', 'l', 'l', 'o' };
+        reverseString(charArray);
+        System.out.println(charArray);
     }
 }

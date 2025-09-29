@@ -40,6 +40,7 @@ public class MinAddToMakeValid {
 
     public static void main(String[] args) {
         String s="()";
+        System.out.println(minAddToMakeValid(s));
         System.out.println(minAddToMakeValid1(s));
     }
 }

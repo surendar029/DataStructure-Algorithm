@@ -34,30 +34,39 @@ public class ProductExceptSelf {
         return nums;
     }
 
+    static int[] productExceptSelf2(int[] nums) {
+        int n = nums.length;
+        int[] result = new int[n];
+
+        if (n == 0) return result;
+
+        int[] prefix = new int[n];
+        int[] suffix = new int[n];
+
+        int product = 1;
+        for (int i = 0; i < n; i++) {
+            product = product * nums[i];
+            prefix[i] = product;
+        }
+
+        product = 1;
+        for (int i = n - 1; i >= 0; i--) {
+            product = product * nums[i];
+            suffix[i] = product;
+        }
+
+        result[0] = suffix[1];
+        result[n - 1] = prefix[n - 2];
+
+        for (int i = 1; i < n - 1; i++) {
+            result[i] = prefix[i - 1] * suffix[i + 1];
+        }
+
+        return result;
+    }
+
     public static void main(String[] args) {
         int[] nums = {-1, 1, 0, -3, 3};
-        int[] leftProduct = new int[nums.length];
-        int[] rightProduct = new int[nums.length];
-        int[] result = new int[nums.length];
-        int product = 1;
-        for (int i = 0; i < nums.length; i++) {
-            product *= nums[i];
-            leftProduct[i] = product;
-        }
-        product = 1;
-        for (int i = nums.length - 1; i >= 0; i--) {
-            product *= nums[i];
-            rightProduct[i] = product;
-        }
-        result[0]=rightProduct[1];
-        result[nums.length-1]=leftProduct[nums.length-2];
-
-        for (int i = 1; i < nums.length-1 ; i++) {
-            int left=leftProduct[i-1];
-            int right=rightProduct[i+1];
-            result[i]=left*right;
-        }
-
-        Arrays.stream(result).forEach(System.out::println);
+        Arrays.stream(productExceptSelf2(nums)).forEach(System.out::println);
     }
 }

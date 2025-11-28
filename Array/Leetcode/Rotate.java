@@ -16,14 +16,14 @@ public class Rotate {
                 matrix[j][i]=temp;
             }
         }
-        for (int i = 0; i < len; i++) {
-            int start=0,end=len-1;
-            while(start<end){
-                int temp=matrix[i][start];
-                matrix[i][start++]=matrix[i][end];
-                matrix[i][end--]=temp;
-            }
-        }
+//        for (int i = 0; i < len; i++) {
+//            int start=0,end=len-1;
+//            while(start<end){
+//                int temp=matrix[i][start];
+//                matrix[i][start++]=matrix[i][end];
+//                matrix[i][end--]=temp;
+//            }
+//        }
         for (int i = 0; i < len; i++) {
             for (int j = 0; j < len; j++) {
                 System.out.print(matrix[i][j]);

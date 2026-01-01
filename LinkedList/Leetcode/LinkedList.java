@@ -1,24 +1,26 @@
 package LinkedList.Leetcode;
 
 public class LinkedList {
-    public Node insertAtBeginning(Node head,int val){
-        Node node=new Node(val);
-        node.next=head;
-        head=node;
+    public Node insertAtBeginning(Node head, int val) {
+        Node node = new Node(val);
+        node.next = head;
+        head = node;
         return head;
     }
-    public Node insertAtEnd(Node head,int val){
-        Node node=new Node(val);
-        if(head==null){
+
+    public Node insertAtEnd(Node head, int val) {
+        Node node = new Node(val);
+        if (head == null) {
             return node;
         }
-        Node temp=head;
-        while(temp.next!=null){
-            temp=temp.next;
+        Node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
         }
-        temp.next=node;
+        temp.next = node;
         return head;
     }
+
     public void display(Node head) {
         Node temp = head;
         while (temp != null) {

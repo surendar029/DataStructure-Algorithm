@@ -7,6 +7,7 @@ public class ReverseWords {
         int len = s.length(), i = 0;
         while (i <= len) {
             while (i < len && s.charAt(i) == ' ') i++;
+            if(i>=len) break;
             int j = i + 1;
             while (j < len && s.charAt(j)!=' ') j++;
             String sub=s.substring(i,j);

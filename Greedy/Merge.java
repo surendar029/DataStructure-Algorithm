@@ -14,10 +14,10 @@ public class Merge {
             }
         });
         List<int[]> result=new ArrayList<>();
-        int start=intervals[0][0];
-        int end=intervals[0][1];
+        int start=intervals[0][0];  //15
+        int end=intervals[0][1];    //18
         for (int[] interval:intervals){
-            if(interval[0]<=end){
+            if(interval[0]<=end){  // 15<=10
                 end=Math.max(interval[1],end);
             }else{
                 result.add(new int[]{start,end});

@@ -36,6 +36,6 @@ public class SingleNumber {
     }
     public static void main(String[] args) {
         int[] nums={2,2,1};
-        System.out.println(singleNumber1(nums));
+        System.out.println(singleNumber(nums));
     }
 }

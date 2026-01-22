@@ -25,8 +25,7 @@ public class CountPrimes {
 
         int count = 0;
         for (boolean prime : isPrime)
-            if (prime)
-                count++;
+            if (prime) count++;
         return count;
     }
 }
